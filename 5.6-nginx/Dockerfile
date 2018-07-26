@@ -1,4 +1,4 @@
-FROM hewn2011/php:5.6.37-fpm-base
+FROM hewn2011/php:5.6-fpm-base
 MAINTAINER lujiaming
 
 RUN apk add --no-cache supervisor nginx
