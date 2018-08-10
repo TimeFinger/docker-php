@@ -22,7 +22,7 @@ ENV PHPMEMCACHED_VERSION 2.2.0
 
 RUN apk add --no-cache --virtual .build-deps \
 		$PHPIZE_DEPS \
-		&& apk add --no-cache libpng-dev libjpeg-turbo-dev \
+		&& apk add --no-cache libpng-dev libjpeg-turbo-dev libmcrypt-dev \
 		libmemcached-dev cyrus-sasl-dev \
 		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath mcrypt \
 		&& curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz \
