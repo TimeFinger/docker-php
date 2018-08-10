@@ -24,7 +24,7 @@ RUN apk add --no-cache --virtual .build-deps \
 		$PHPIZE_DEPS \
 		&& apk add --no-cache libpng-dev libjpeg-turbo-dev \
 		libmemcached-dev cyrus-sasl-dev \
-		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath mcrypt apcu \
+		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath mcrypt \
 		&& curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz \
 		&& curl -L -o /tmp/memcached.tar.gz https://github.com/php-memcached-dev/php-memcached/archive/$PHPMEMCACHED_VERSION.tar.gz \
 		&& tar zxvf /tmp/redis.tar.gz \
