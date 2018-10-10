@@ -23,8 +23,8 @@ ENV PHPREDIS_VERSION 4.1.1
 ENV PHPMEMCACHED_VERSION 3.0.4
 ENV PHPSWOOLE_VERSION 4.2.1
 ENV PHPREDIS_URL https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz
-ENV PHPMEMCACHED_URL https://github.com/php-memcached-dev/php-memcached/archive/$PHPMEMCACHED_VERSION.tar.gz
-ENV PHPSWOOLE_URL https://pecl.php.net/get/swoole-$PHPSWOOLE_VERSION.tgz
+ENV PHPMEMCACHED_URL https://github.com/php-memcached-dev/php-memcached/archive/v$PHPMEMCACHED_VERSION.tar.gz
+ENV PHPSWOOLE_URL https://github.com/swoole/swoole-src/archive/v$PHPSWOOLE_VERSION.tar.gz
 
 RUN apk add --no-cache --virtual .build-deps \
 		$PHPIZE_DEPS \
@@ -42,7 +42,7 @@ RUN apk add --no-cache --virtual .build-deps \
 		&& mkdir -p /usr/src/php/ext \
 		&& mv phpredis-$PHPREDIS_VERSION /usr/src/php/ext/redis \
 		&& mv php-memcached-$PHPMEMCACHED_VERSION /usr/src/php/ext/memcached \
-		&& mv swoole-$PHPSWOOLE_VERSION /usr/src/php/ext/swoole \
+		&& mv swoole-src-$PHPSWOOLE_VERSION /usr/src/php/ext/swoole \
 		&& docker-php-ext-install redis \
 		&& docker-php-ext-install memcached \
 		&& docker-php-ext-install swoole \
