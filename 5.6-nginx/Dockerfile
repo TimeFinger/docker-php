@@ -3,7 +3,7 @@ MAINTAINER lujiaming
 
 RUN apk add --no-cache supervisor nginx \
     && mkdir /etc/supervisor.d && mkdir /run/nginx && mkdir /www \
-    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php.ini
+    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
 COPY etc/php5/php-fpm.d/* /usr/local/etc/php-fpm.d/
 COPY etc/supervisor.d/* /etc/supervisor.d/
