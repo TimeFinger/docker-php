@@ -35,7 +35,7 @@ ENV PHPRDKAFKA_URL https://pecl.php.net/get/rdkafka-$PHPRDKAFKA_VERSION.tgz
 RUN apk add --no-cache --virtual .build-deps \
 		$PHPIZE_DEPS \
 		&& apk add --no-cache libpng-dev libjpeg-turbo-dev libmemcached-dev cyrus-sasl-dev librdkafka-dev \
-		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath \
+		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath zip \
 		&& curl -L -o /tmp/rdkafka.tar.gz $PHPRDKAFKA_URL \
 		&& curl -L -o /tmp/redis.tar.gz $PHPREDIS_URL \
 		&& curl -L -o /tmp/memcached.tar.gz $PHPMEMCACHED_URL \

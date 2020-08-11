@@ -38,7 +38,7 @@ RUN apk add --no-cache --virtual .build-deps \
 		$PHPIZE_DEPS \
 		&& apk add --no-cache libpng-dev libjpeg-turbo-dev libmcrypt-dev \
 		libmemcached-dev cyrus-sasl-dev openssl-dev librdkafka-dev \
-		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath mcrypt \
+		&& docker-php-ext-install gd mysqli pdo_mysql opcache bcmath mcrypt zip \
 		&& curl -L -o /tmp/yaf.tar.gz $PHPYAF_URL \
 		&& curl -L -o /tmp/rdkafka.tar.gz $PHPRDKAFKA_URL \
 		&& curl -L -o /tmp/redis.tar.gz $PHPREDIS_URL \
